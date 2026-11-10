@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrome Dino Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="header">
+      <div class="score-board">
+        <span>HI <span id="high-score">00000</span></span>
+        <span id="current-score">00000</span>
+      </div>
+    </div>
+    
+    <div id="game-world">
+      <!-- Ground line -->
+      <div id="ground"></div>
+
+      <!-- Clouds -->
+      <div class="cloud" style="top: 30px; left: 150px;"></div>
+      <div class="cloud" style="top: 60px; left: 450px;"></div>
+
+      <!-- Dino Character -->
+      <div id="dino">
+        <!-- Pixel art SVG representation of the Dino -->
+        <svg viewBox="0 0 44 47" class="dino-svg">
+          <path fill="#535353" d="M22,0 h14 v2 h-14 z M20,2 h18 v2 h-18 z M18,4 h22 v2 h-22 z M18,6 h24 v4 h-24 z M18,10 h16 v2 h-16 z M18,12 h24 v2 h-24 z M18,14 h22 v2 h-22 z M18,16 h14 v2 h-14 z M18,18 h12 v2 h-12 z M0,18 h4 v2 h-4 z M0,20 h6 v2 h-6 z M0,22 h8 v2 h-8 z M0,24 h10 v2 h-10 z M0,26 h12 v2 h-12 z M0,28 h14 v2 h-14 z M0,30 h26 v2 h-26 z M2,32 h22 v2 h-22 z M4,34 h18 v2 h-18 z M6,36 h14 v2 h-14 z M8,38 h10 v2 h-10 z M10,40 h4 v3 h-4 z M10,43 h6 v2 h-6 z M20,40 h4 v3 h-4 z M20,43 h6 v2 h-6 z" />
+          <!-- Eye -->
+          <rect x="24" y="4" width="3" height="3" fill="#f7f7f7" />
+        </svg>
+      </div>
+
+      <!-- Cactus Obstacle -->
+      <div id="cactus">
+        <svg viewBox="0 0 25 50" class="cactus-svg">
+          <path fill="#535353" d="M9,0 h7 v46 h-7 z M2,14 h7 v18 h-7 z M2,14 h7 v5 h-7 z M0,19 h2 v10 h-2 z M0,27 h9 v4 h-9 z M16,10 h7 v18 h-7 z M16,24 h9 v4 h-9 z M23,10 h2 v16 h-2 z" />
+        </svg>
+      </div>
+
+      <!-- Game Over Overlay -->
+      <div id="game-over-screen" class="hidden">
+        <p class="game-over-text">G A M E &nbsp; O V E R</p>
+        <button id="restart-btn" title="Restart Game">
+          <svg viewBox="0 0 24 24" width="36" height="36" fill="#535353">
+            <path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Start Message -->
+      <div id="start-screen">
+        <p>Press <strong>Space</strong>, <strong>&uarr;</strong> or <strong>Tap</strong> to Jump</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
